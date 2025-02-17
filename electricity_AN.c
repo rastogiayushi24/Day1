@@ -1,47 +1,45 @@
-#include <stdio.h>
+#include<stdio.h>
+int main()
+{
+    char name[200];
+    int id;
+    int units;
+    float fixedCharge,totalBill,surcharge;
 
-int main() {
-    char customerName[100];
-    int customerID;
-    int unitsConsumed;
-    float baseBill, totalBill, surcharge = 0.0;
+    printf("Enter the customer name:\n");
+    scanf("%s",name);
+    printf("Enter customer id:\n");
+    scanf("%d",&id);
+    printf("Enter the units consumed:\n");
+    scanf("%d",&units);
+    
+    fixedCharge = 100;
 
-    // customer details
-    printf("Enter Customer Name: ");
-    fgets(customerName, sizeof(customerName), stdin);
-   
-    printf("Enter Customer ID: ");
-    scanf("%d", &customerID);
-   
-    printf("Enter Total Units Consumed: ");
-    scanf("%d", &unitsConsumed);
-
-    // Calculate base bill
-    baseBill = 100; // Fixed charge
-
-    if (unitsConsumed <= 100) {
-        baseBill += unitsConsumed * 5;
-    } else if (unitsConsumed <= 300) {
-        baseBill += (100 * 5) + ((unitsConsumed - 100) * 7);
-    } else {
-        baseBill += (100 * 5) + (200 * 7) + ((unitsConsumed - 300) * 10);
+    if(units<=100)
+    {
+        fixedCharge = units*5;
     }
-
-    // Check for surcharge
-    if (baseBill > 1000) {
-        surcharge = baseBill * 0.05; // 5% surcharge
+    else if(units<=300)
+    {
+        fixedCharge = fixedCharge+(100*5)+(units-100)*7;
     }
+    else 
+    {
+     fixedCharge = fixedCharge + (100*5)+(200*7)+((units - 300)*10);
+    }
+    if (fixedCharge > 1000) {
+      surcharge = fixedCharge * 0.05; 
+  }
 
-    // Calculate total bill
-    totalBill = baseBill + surcharge;
-
-    // display output
-    printf("\nCustomer Name: %s", customerName);
-    printf("Customer ID: %d\n", customerID);
-    printf("Units Consumed: %d\n", unitsConsumed);
-    printf("Base Bill: ₹%.2f\n", baseBill);
+  totalBill = fixedCharge + surcharge;
+  
+    printf("\nCustomer Name: %s\n", name);
+    printf("Customer ID: %d\n", id);
+    printf("Units Consumed: %d\n", units);
+    printf("Base Bill: ₹%.2f\n", fixedCharge);
     printf("Surcharge: ₹%.2f\n", surcharge);
     printf("Total Bill: ₹%.2f\n", totalBill);
 
     return 0;
+
 }
