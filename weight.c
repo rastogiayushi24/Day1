@@ -3,7 +3,6 @@
 int main() {
     int n, accepted = 0, rejected = 0, weight;
     
-    // Taking input from user
     printf("Enter number of products: ");
     scanf("%d", &n);
     
@@ -11,7 +10,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         scanf("%d", &weight);
         
-        // Checking if the product is accepted or rejected
         if (weight >= 950 && weight <= 1050) {
             accepted++;
         } else {
@@ -19,7 +17,6 @@ int main() {
         }
     }
     
-    // Displaying results
     printf("Accepted Products: %d\n", accepted);
     printf("Rejected Products: %d\n", rejected);
     
