@@ -11,9 +11,9 @@ int main() {
     scanf("%d", &experience);
   
     if (salary >= 30000 && creditScore >= 750 && experience >= 2) {
-        printf("Loan will be issued\n");
+        printf("Loan approved\n");
     } else {
-        printf("Loan will not be issued\n");
+        printf("Loan denied\n");
     }
     
     return 0;
