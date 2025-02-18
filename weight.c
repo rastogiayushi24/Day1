@@ -6,11 +6,13 @@ int main() {
     printf("Enter number of products: ");
     scanf("%d", &n);
     
-    printf("Enter weights (in grams): ");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &weight);
+    for (int i = 0; i < n; i++)
+        {
+          printf("Enter weights (in grams): ");
+          scanf("%d", &weight);
         
-        if (weight >= 950 && weight <= 1050) {
+        if (weight >= 950 && weight <= 1050)
+        {
             accepted++;
         } else {
             rejected++;
