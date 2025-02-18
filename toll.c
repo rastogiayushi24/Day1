@@ -18,11 +18,13 @@ int main() {
             totalCollection += 100;
         } else if (strcmp(vehicleType, "Bike") == 0) {
             totalCollection += 20;
-        } else {
-            printf("Invalid vehicle type entered!\n");
-            return 1;
         }
     }
+    
+    printf("Total Toll Collection: ₹%d\n", totalCollection);
+    
+    return 0;
+}
     
     printf("Total Toll Collection: ₹%d\n", totalCollection);
     
